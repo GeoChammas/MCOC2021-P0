@@ -2,37 +2,37 @@
 
 # Mi computador principal
 
-* Marca/modelo: System 76 Serval WS
+* Marca/modelo: Apple MacBook Air
 * Tipo: Notebook
-* Año adquisición: 2015
+* Año adquisición: 2018
 * Procesador:
-  * Marca/Modelo: Intel Core i7-4790K
-  * Velocidad Base: 4.00 GHz
-  * Velocidad Máxima: 4.40 GHz
-  * Numero de núcleos: 4 
-  * Humero de hilos: 2
-  * Arquitectura: x86_64
-  * Set de instrucciones: Intel SSE4.1, Intel SSE4.2, Intel AVX2
+  * Marca/Modelo: Intel Core i5-4790K (GENERATION)
+  * Velocidad Base: 1.80 GHz
+  * Velocidad Máxima: 1.80 GHz
+  * Numero de núcleos: 2 
+  * Humero de hilos: 2 (THREAD)
+  * Arquitectura: x86_64 (No se)
+  * Set de instrucciones: Intel SSE4.1, Intel SSE4.2, Intel AVX2 (!!!!!!)
 * Tamaño de las cachés del procesador
-  * L1d: 32KB
-  * L1i: 32KB
+  * L1d: 32KB (!!)
+  * L1i: 32KB (!!)
   * L2: 256KB
-  * L3: 8192KB
+  * L3: 3MB
 * Memoria 
-  * Total: 32 GB
+  * Total: 8 GB
   * Tipo memoria: DDR3
-  * Velocidad 1867 MHz
-  * Numero de (SO)DIMM: 4
+  * Velocidad 1600 MHz
+  * Numero de (SO)DIMM: 4 (2 but not sure)
 * Tarjeta Gráfica
-  * Marca / Modelo: Nvidia GeForce GTX 980M
-  * Memoria dedicada: 8192 MB
-  * Resolución: 1920 x 1080
+  * Marca / Modelo: Intel HD Graphics 6000
+  * Memoria dedicada: 1536 MB
+  * Resolución: 1440 x 900
 * Disco 1: 
-  * Marca: Samsung
+  * Marca: Samsung (Make sure)
   * Tipo: SSD
-  * Tamaño: 1TB
-  * Particiones: 4
-  * Sistema de archivos: EXT4, swap
+  * Tamaño: 121 GB
+  * Particiones: 1 (Make sure)
+  * Sistema de archivos: EXT4, swap (No se)
 * Disco 2: 
   * Marca: Samsung
   * Tipo: SSD
