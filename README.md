@@ -6,7 +6,7 @@
 * Tipo: Notebook
 * Año adquisición: 2018
 * Procesador:
-  * Marca/Modelo: Intel Core i5 de doble núcleo
+  * Marca/Modelo: Intel Core i5 de Doble Núcleo
   * Velocidad Base: 1.80 GHz
   * Velocidad Máxima: 2.90 GHz
   * Numero de núcleos: 2 
