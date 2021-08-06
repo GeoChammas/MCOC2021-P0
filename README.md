@@ -46,7 +46,7 @@ P0E2: Desempeño MATMUL
 
 A continuación, se presenta el rendimiento de mi PC al calcular multiplicaciones de matrices de diferentes tamaños, realizando diez corridas. Se grafica el tiempo transcurrido en segundos que demora en realizar cada operación versus el tamaño de la matriz en el primer subplot. En el segundo, se grafica el uso de memoria versus el tamaño de la matriz, además de la memoria RAM del PC. 
 
-![Desempeño MATMUL](/docs/source/images/logo.png)
+![Desempeño MATMUL](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20A%40B.png)
 
 
 1. ¿Cómo difiere del gráfico del profesor/ayudante?  

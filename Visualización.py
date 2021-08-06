@@ -84,6 +84,6 @@ plt.xlabel("Tamaño Matriz N")
 plt.yticks(mem0, mem_label)
 plt.grid(True)
 plt.xticks(N0, N0, rotation=45)
-plt.savefig('Rendimiento A@B.png')
+plt.savefig("Rendimiento A@B", bbox_inches = 'tight')
 plt.show()
 
