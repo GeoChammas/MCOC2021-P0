@@ -42,3 +42,43 @@
 
 
 
+P0E2: Desempeño MATMUL
+
+A continuación, se presenta el rendimiento de mi PC al calcular multiplicaciones de matrices de diferentes tamaños, realizando diez corridas. Se grafica el tiempo transcurrido en segundos que demora en realizar cada operación versus el tamaño de la matriz en el primer subplot. En el segundo, se grafica el uso de memoria versus el tamaño de la matriz, además de la memoria RAM del PC. 
+
+![Desempeño MATMUL](/docs/source/images/logo.png)
+
+
+1. ¿Cómo difiere del gráfico del profesor/ayudante?  
+
+Viendo el gráfico "tamaño de matriz vs tiempo transcurrido", se nota cómo mi computador se demoró más que el del profesor en realizar las corridas, especialmente los últimos puntos correspondientes a matrices cuadradas de dimensión 10000, donde se alcanzaron tiempos alrededores de 1 minuto, mientras que el profesor se demoró 30 segundos máximo aproximadamente.
+
+
+
+2. ¿A qué se pueden deber las diferencias en cada corrida?  
+
+
+
+
+
+3. El gráfico de uso de memoria es lineal con el tamaño de matriz, pero el de tiempo transcurrido no lo es ¿porqué puede ser?  
+
+
+
+
+
+4. ¿Qué versión de python está usando?  
+
+Estoy usando Python 3.8
+
+
+
+5. ¿Qué versión de numpy está usando?  
+
+Estoy usando Numpy 1.19.2
+
+
+
+6. Durante la ejecución de su código ¿se utiliza más de un procesador? Muestre una imagen (screenshot) de su uso de procesador durante alguna corrida para confirmar.   
+
+
