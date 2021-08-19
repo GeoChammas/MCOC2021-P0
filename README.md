@@ -111,14 +111,16 @@ Además, se encuentra el porcentaje de memoria que fue usado durante las corrida
 ![Procesador](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Procesador.png)
 
 
-##Preguntas:
+## Preguntas:
 
 1. ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)? Justifique claramente su respuesta. 
 
 Tras realizar una investigación en internet, se llegó a que numpy llama a numpy.linalg.solve(A,I), donde A es la matriz a invertir e I es la matriz identidad. Y este solver resuelve usando la factorización LU de Lapack. En otras palabras, numpy llama a la descomposición LU de manera indirecta. Por otro lado, scipy llama de inmediato a LU, haciéndolo más rápido que numpy, lo cual se observó en los gráficos mostrados anteriormente.
   
 
+
 2. ¿Cómo incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? Justifique su comentario en base al uso de procesadores y memoria observado durante las corridas. 
 
 
+Observando los gráficos, se ve que el half toma menos tiempo en invertir la matriz, dado que tiene datos más pequeños que los single, double y longdouble. Estos cambios en el tiempo entre estos tipos es debido al paralelismo, en donde el procesador ejecuta varias tareas al mismo tiempo, realizando varios cálculos simultáneamente. Mirando el uso de memoria durante la ejecución del código, este oscilaba entre 60% y 65%, lo cual es relativamente bajo considerando las tareas que se estaban realizando, lo cual, nuevamente es debido al paralelismo y a la memoria caché. Además, los núcleos 2 y 4, los cuales se ven en la imagen de actividad del procesador, tienen menos dificultad durante la ejecución, dado que se ve menos actividad, lo cual tiene que ver con lo mencionado.
 
