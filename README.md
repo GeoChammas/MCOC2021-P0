@@ -42,7 +42,7 @@
 
 
 
-P0E2: Desempeño MATMUL
+					P0E2: Desempeño MATMUL
 
 A continuación, se presenta el rendimiento de mi PC al calcular multiplicaciones de matrices de diferentes tamaños, realizando diez corridas. Se grafica el tiempo transcurrido en segundos que demora en realizar cada operación versus el tamaño de la matriz en el primer subplot. En el segundo, se grafica el uso de memoria versus el tamaño de la matriz, además de la memoria RAM del PC. 
 
@@ -84,3 +84,22 @@ Estoy usando Numpy 1.19.2
 A continuación, se presenta una imagen que muestra el uso del procesador, donde se ven los 4 núcleos y su actividad.
 
 ![CPU History](https://github.com/GeoChammas/MCOC2021-P0/blob/main/CPU%20History.png)
+
+
+
+
+					#P0E3: Desempeño INV
+
+El objetivo es medir el tiempo transcurrido y el uso de memoria al invertir matrices de varias dimensiones usando numpy y scipy (con overwrite_a= True y False), es decir, 3 casos. Para cada uno, se usa 4 tipos de datos diferentes: half (el cual no es soportado por numpy), single, double y longdouble (tampoco lo soporta numpy). Con esto, se generan 12 archivos .txt con 10 corridas en cada uno.
+ 
+A continuación, se presentan cuatro gráficos correspondientes al rendimiento de mi pc en invertir las matrices, donde cada uno corresponde a un tipo de dato, y contiene a los tres casos mencionados.
+
+
+
+
+Además, se encuentra el porcentaje de memoria que fue usado durante las corridas, lo cual siempre se encontraba entre el 60% y 65%, y también la actividad del procesador.
+
+
+
+
+ 
