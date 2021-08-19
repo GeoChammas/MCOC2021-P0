@@ -42,7 +42,7 @@
 
 
 
-					P0E2: Desempeño MATMUL
+# P0E2: Desempeño MATMUL
 
 A continuación, se presenta el rendimiento de mi PC al calcular multiplicaciones de matrices de diferentes tamaños, realizando diez corridas. Se grafica el tiempo transcurrido en segundos que demora en realizar cada operación versus el tamaño de la matriz en el primer subplot. En el segundo, se grafica el uso de memoria versus el tamaño de la matriz, además de la memoria RAM del PC. 
 
@@ -88,18 +88,37 @@ A continuación, se presenta una imagen que muestra el uso del procesador, donde
 
 
 
-					#P0E3: Desempeño INV
+# P0E3: Desempeño INV
 
 El objetivo es medir el tiempo transcurrido y el uso de memoria al invertir matrices de varias dimensiones usando numpy y scipy (con overwrite_a= True y False), es decir, 3 casos. Para cada uno, se usa 4 tipos de datos diferentes: half (el cual no es soportado por numpy), single, double y longdouble (tampoco lo soporta numpy). Con esto, se generan 12 archivos .txt con 10 corridas en cada uno.
  
 A continuación, se presentan cuatro gráficos correspondientes al rendimiento de mi pc en invertir las matrices, donde cada uno corresponde a un tipo de dato, y contiene a los tres casos mencionados.
 
+![Rendimiento Am1 Half](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Half.png)
 
+![Rendimiento Am1 Single](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Single.png)
 
+![Rendimiento Am1 Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Double.png)
+
+![Rendimiento Am1 Long Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Long%20Double.png)
+
+Es posible observar que las iteraciones realizadas por numpy (color cyan) se demoraron más que las realizadas por scipy (rojo y verde). Por otro lado, el uso de memoria es el mismo en todos los gráficos, debido a que se utilizaron las mismas dimensiones de matrices para cada caso.
 
 Además, se encuentra el porcentaje de memoria que fue usado durante las corridas, lo cual siempre se encontraba entre el 60% y 65%, y también la actividad del procesador.
 
+![Memoria](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Memoria.png)
+
+![Procesador](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Procesador.png)
+
+
+##Preguntas:
+
+1. ¿Qué algoritmo de inversión cree que utiliza cada método (ver wiki)? Justifique claramente su respuesta. 
+
+Tras realizar una investigación en internet, se llegó a que numpy llama a numpy.linalg.solve(A,I), donde A es la matriz a invertir e I es la matriz identidad. Y este solver resuelve usando la factorización LU de Lapack. En otras palabras, numpy llama a la descomposición LU de manera indirecta. Por otro lado, scipy llama de inmediato a LU, haciéndolo más rápido que numpy, lo cual se observó en los gráficos mostrados anteriormente.
+  
+
+2. ¿Cómo incide el paralelismo y la estructura de caché de su procesador en el desempeño en cada caso? Justifique su comentario en base al uso de procesadores y memoria observado durante las corridas. 
 
 
 
- 
