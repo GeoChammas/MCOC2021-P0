@@ -130,20 +130,20 @@ Observando los gráficos, se ve que el half toma menos tiempo en invertir la mat
 
 Se realizan dos procedimientos: "A" corresponde a la resolución de un sistema de ecuaciones con el solve de scipy y "B" a la obtención de valores y vectores propios de una matriz con eigh de scipy. Cada uno se desarrolla con diferentes casos de solve y eigh y con dos tipos de datos (float y double) y se mide el tiempo que demora el computador en ejecutar dichos cálculos. Los resultados son graficados y se presentan a continuación.  
 
-![Caso A Float](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Caso%20A%20Float.png)
+![Caso A Float](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Caso%20A%20Float.png)
 
-![Caso A Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Caso%20A%20Double.png)
+![Caso A Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Caso%20A%20Double.png)
 
-![Caso B Float](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Caso%20B%20Float.png)
+![Caso B Float](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Caso%20B%20Float.png)
 
-![Caso B Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Caso%20B%20Double.png)
+![Caso B Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Caso%20B%20Double.png)
 
 Además, se encuentra el porcentaje de memoria que fue usado durante las corridas, lo cual siempre se encontraba entre el 60% y 65%, y también la actividad del procesador que fue relativamente constante en todas las corridas realizadas.
 
 
-![Memoria_E4](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Memoria_E4.png)
+![Memoria_E4](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Memoria_E4.png)
 
-![Procesador_E4](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Procesador_E4.png)
+![Procesador_E4](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%204/Procesador_E4.png)
 
 ## Comentarios:
 
