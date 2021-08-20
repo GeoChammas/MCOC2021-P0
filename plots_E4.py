@@ -582,17 +582,9 @@ diccionario["B_double"].close()
 
 
 
-
 N0 = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000]
-
 dt_label = ["0.1 ms", "1 ms", "10 ms", "0.1 s", "1 s", "10 s", "1 min", "10 min"]
 dt0 = [0.0001, 0.001, 0.01, 0.1, 1, 10, 60, 600]
-
-mem_label = ["1 KB", "10 KB", "100 KB", "1 MB", "10 MB", "100 MB", "1 GB", "10 GB"]
-mem0 = [1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000]
-
-
-
 
 
 plt.title("Caso A Float")
@@ -636,15 +628,15 @@ plt.show()
 
 
 plt.title("Caso B Float")
-plt.loglog(Ns_A[0],dts_B1_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B2_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B3_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B4_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B5_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B6_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B7_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B8_float, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B9_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B1_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B2_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B3_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B4_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B5_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B6_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B7_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B8_float, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B9_float, marker="o", markersize=5)
 plt.autoscale(True,True,True)
 plt.ylabel("Tiempo Transcurrido [s]")
 plt.yticks(dt0, dt_label)
@@ -658,15 +650,15 @@ plt.show()
 
 
 plt.title("Caso B Double")
-plt.loglog(Ns_A[0],dts_B1_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B2_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B3_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B4_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B5_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B6_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B7_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B8_double, marker="o", markersize=5)
-plt.loglog(Ns_A[0],dts_B9_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B1_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B2_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B3_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B4_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B5_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B6_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B7_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B8_double, marker="o", markersize=5)
+plt.loglog(Ns_B[0],dts_B9_double, marker="o", markersize=5)
 plt.autoscale(True,True,True)
 plt.ylabel("Tiempo Transcurrido [s]")
 plt.yticks(dt0, dt_label)
