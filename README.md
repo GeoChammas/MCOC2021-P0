@@ -147,4 +147,8 @@ Además, se encuentra el porcentaje de memoria que fue usado durante las corrida
 
 ## Comentarios:
 
+En cuanto al procedimiento "A", el caso que más se demoró fue el primero, en que se calcula la inversa de la matriz A y se multiplica por el vector b, mientras que el caso que menos se demoró fue el del solve con assume_a='pos'. En ambos casos, y en el resto también, el tiempo de ejecución del tipo de dato double fue mayor al float, debido a que tiene datos más pesados que este último. Además, todos los subcasos tienen casi los mismos tiempos de ejecución (existe poca variabilidad).
 
+En cuanto al procedimiento "B", se redujo el tamaño máximo de la matriz laplaciana a 5000 (en el procedimiento A era 10000) porque se demoraba más de dos minutos por iteración (aquí es posible ver la relación exponencial entre el tamaño de la matriz y el tiempo de ejecución del programa). El caso que más se demoró fue el driver='evx' con overwrite_a=True, mientras que el que se demoró menos fue el driver='evd' con overwrite_a=False para el tipo de dato float, y el eigh por defecto para el double, aunque todos los casos tienen casi los mismos tiempos.
+
+A diferencia de las entregas anteriores, no se traficó el uso de memoria. Sin embargo, se sabe que tiene una relación lineal con el tamaño de las matrices, por lo que el gráfico, al igual que las entregas anteriores, sería una simple recta lineal. 
