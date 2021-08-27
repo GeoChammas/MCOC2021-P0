@@ -181,7 +181,9 @@ def laplaciana_dispersa(N, t=double):
 ## Gráficos
 Se presentan los gráficos obtenidos de tiempo de ensamblaje y de solución vs tamaño de matriz a continuación:
 
+![MATMUL Matrices Llenas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%205/MATMUL%20Matrices%20Llenas.png)
 
+![MATMUL Matrices Dispersas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%205/MATMUL%20Matrices%20Dispersas.png)
 
 Las líneas discontinuas que aparecen en los gráficos muestran comportamientos y relaciones entre el tiempo transcurrido y el tamaño de las matrices. Dado que los gráficos tienen una escala bi-logarítmica, las relaciones exponenciales se muestran como lineales.
 
