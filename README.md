@@ -152,3 +152,39 @@ En cuanto al procedimiento "A", el caso que más se demoró fue el primero, en q
 En cuanto al procedimiento "B", se redujo el tamaño máximo de la matriz laplaciana a 5000 (en el procedimiento A era 10000) porque se demoraba más de dos minutos por iteración (aquí es posible ver la relación exponencial entre el tamaño de la matriz y el tiempo de ejecución del programa). El caso que más se demoró fue el driver='evx' con overwrite_a=True, mientras que el que se demoró menos fue el driver='evd' con overwrite_a=False para el tipo de dato float, y el eigh por defecto para el double, aunque todos los casos tienen casi los mismos tiempos.
 
 A diferencia de las entregas anteriores, no se traficó el uso de memoria. Sin embargo, se sabe que tiene una relación lineal con el tamaño de las matrices, por lo que el gráfico, al igual que las entregas anteriores, sería una simple recta lineal. 
+
+
+
+# P0E5: Matrices Dispersas y Complejidad Computacional
+
+Se realizó un archivo py con el cual se ejecuta la operación MATMUL entre dos matrices laplacianas llenas y dispersas (tipo CSR), con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, debido a que solo guarda los números de las matrices que son diferentes de cero, es decir, trabaja con menos datos (los más importantes) y se ahorra sumas de 0 que no tienen efecto. Esto se nota en los gráficos de tiempo vs N que se muestran a continuación, en donde el tamaño máximo de matriz usado para las llenas es de 10.000, mientras que para las dispersas es de 1.000.000.
+
+
+## Código de Ensamblaje
+
+A continuación, se presentan los dos códigos usados para armar las matrices laplacianas llenas y dispersas.
+
+**Función Laplaciana Matrices Llenas**
+```python
+def laplaciana(N, t=double):
+    e = eye(N) - eye(N,N,1)
+    return t(e+e.T)
+```
+
+**Función Laplaciana Matrices Dispersas**
+
+```python
+def laplaciana_dispersa(N, t=double):
+    return 2*sparse.eye(N, dtype = double) - sparse.eye(N, N, 1, dtype = double) - sparse.eye(N, N, -1, dtype = double)
+```
+
+## Gráficos
+Se presentan los gráficos obtenidos de tiempo de ensamblaje y de solución vs tamaño de matriz a continuación:
+
+
+
+Las líneas discontinuas que aparecen en los gráficos muestran comportamientos y relaciones entre el tiempo transcurrido y el tamaño de las matrices. Dado que los gráficos tienen una escala bi-logarítmica, las relaciones exponenciales se muestran como lineales.
+
+En el caso del tiempo de ensamblaje de matrices llenas, este presentó un comportamiento sub-lineal y sobre la relación cuadrática con matrices pequeñas, pero asintótico a la linea cúbica con tamaños mayores. Mientras que el tiempo de solución del MATMUL mantenía un comportamiento asintótico a la relación cúbica con casi todo tamaño de matriz.
+
+En cuanto al tiempo de ensamblaje y el tiempo de solución MATMUL de las matrices dispersas, estos presentaron un comportamiento sobre lineal hasta N=10.000, luego del cual pasaron a ser asintóticos con respecto a la misma recta. 
