@@ -157,7 +157,7 @@ A diferencia de las entregas anteriores, no se traficó el uso de memoria. Sin e
 
 # P0E5-E6: Matrices Dispersas y Complejidad Computacional
 
-## 1. Complejidad algorítmica de MATMUL
+## 1. Complejidad Algorítmica de MATMUL
 
 Se realizó un archivo py con el cual se ejecuta la operación MATMUL entre dos matrices laplacianas llenas y dispersas (tipo CSR), con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, debido a que solo guarda los números de las matrices que son diferentes de cero, es decir, trabaja con menos datos (los más importantes) y se ahorra sumas de 0 que no tienen efecto. Esto se nota en los gráficos de tiempo vs N que se muestran a continuación, en donde el tamaño máximo de matriz usado para las llenas es de 10.000, mientras que para las dispersas es de 1.000.000.
 
@@ -195,7 +195,7 @@ En cuanto al tiempo de ensamblaje y el tiempo de solución MATMUL de las matrice
 
 
 
-## 2. Complejidad algorítmica de SOLVE
+## 2. Complejidad Algorítmica de SOLVE
 
 Se realizó un archivo py con el cual se ejecuta la operación SOLVE del sistema de ecuaciones Ax=b, donde la matriz A es laplaciana (se usaron matrices llenas y matrices dispersas del tipo CSR) y el vector b es un vector de unos, ambos con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, debido a que solo guarda los números de las matrices que son diferentes de cero, es decir, trabaja con menos datos (los más importantes) y se ahorra sumas de 0 que no tienen efecto. Esto se nota en los gráficos de tiempo vs N que se muestran a continuación, en donde el tamaño máximo de matriz usado para las llenas es de 10.000, mientras que para las dispersas es de 1.000.000.
 
@@ -234,7 +234,7 @@ Con esto, se puede ver cómo afecta el tamaño de las matrices al comportamiento
 
 Analizando la estabilidad de las corridas, es decir, cuánto varía una con la otra, las del tiempo de ensamblaje de matrices llenas, y los tiempos de solución de las llenas y dispersas coinciden todas menos una corrida, que se desvía alrededor de N=200. Mientras que las corridas del tiempo de solución de las matrices llenas son todas prácticamente iguales.
 
-## 3. Complejidad algorítmica de INV
+## 3. Complejidad Algorítmica de INV
 
 Se realizó un archivo py con el cual se ejecuta la operación INV en donde se invierte una matriz A laplaciana (se usaron matrices llenas y matrices dispersas del tipo CSC) con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, al igual que MATMUL y SOLVE. Sin embargo, para INV, el tamaño máximo de las matrices fue de 10.000 para matrices llenas y dispersas, dado que la reducción en el tiempo en el caso de las dispersas no fue notable, y se demoraba más de dos minutos por corrida con matrices de mayor tamaño, por lo que no se llegó a matrices de N=1.000.000 como MATMUL y SOLVE.
 
