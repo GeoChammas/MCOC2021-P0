@@ -46,7 +46,7 @@
 
 A continuación, se presenta el rendimiento de mi PC al calcular multiplicaciones de matrices de diferentes tamaños, realizando diez corridas. Se grafica el tiempo transcurrido en segundos que demora en realizar cada operación versus el tamaño de la matriz en el primer subplot. En el segundo, se grafica el uso de memoria versus el tamaño de la matriz, además de la memoria RAM del PC. 
 
-![Desempeño MATMUL](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20A%40B.png)
+![Desempeño MATMUL](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%202/Rendimiento%20A%40B.png)
 
 
 1. ¿Cómo difiere del gráfico del profesor/ayudante?  
@@ -83,7 +83,7 @@ Estoy usando Numpy 1.19.2
 
 A continuación, se presenta una imagen que muestra el uso del procesador, donde se ven los 4 núcleos y su actividad.
 
-![CPU History](https://github.com/GeoChammas/MCOC2021-P0/blob/main/CPU%20History.png)
+![CPU History](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%202/CPU%20History.png)
 
 
 
@@ -94,21 +94,21 @@ El objetivo es medir el tiempo transcurrido y el uso de memoria al invertir matr
  
 A continuación, se presentan cuatro gráficos correspondientes al rendimiento de mi pc en invertir las matrices, donde cada uno corresponde a un tipo de dato, y contiene a los tres casos mencionados.
 
-![Rendimiento Am1 Half](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Half.png)
+![Rendimiento Am1 Half](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Rendimiento%20Am1%20Half.png)
 
-![Rendimiento Am1 Single](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Single.png)
+![Rendimiento Am1 Single](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Rendimiento%20Am1%20Single.png)
 
-![Rendimiento Am1 Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Double.png)
+![Rendimiento Am1 Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Rendimiento%20Am1%20Double.png)
 
-![Rendimiento Am1 Long Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Rendimiento%20Am1%20Long%20Double.png)
+![Rendimiento Am1 Long Double](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Rendimiento%20Am1%20Long%20Double.png)
 
 Es posible observar que las iteraciones realizadas por numpy (color cyan) se demoraron más que las realizadas por scipy (rojo y verde). Por otro lado, el uso de memoria es el mismo en todos los gráficos, debido a que se utilizaron las mismas dimensiones de matrices para cada caso.
 
 Además, se encuentra el porcentaje de memoria que fue usado durante las corridas, lo cual siempre se encontraba entre el 60% y 65%, y también la actividad del procesador.
 
-![Memoria](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Memoria.png)
+![Memoria](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Memoria.png)
 
-![Procesador](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Procesador.png)
+![Procesador](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%203/Procesador.png)
 
 
 ## Preguntas:
@@ -155,12 +155,14 @@ A diferencia de las entregas anteriores, no se traficó el uso de memoria. Sin e
 
 
 
-# P0E5: Matrices Dispersas y Complejidad Computacional
+# P0E5-E6: Matrices Dispersas y Complejidad Computacional
+
+## 1. Complejidad algorítmica de MATMUL
 
 Se realizó un archivo py con el cual se ejecuta la operación MATMUL entre dos matrices laplacianas llenas y dispersas (tipo CSR), con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, debido a que solo guarda los números de las matrices que son diferentes de cero, es decir, trabaja con menos datos (los más importantes) y se ahorra sumas de 0 que no tienen efecto. Esto se nota en los gráficos de tiempo vs N que se muestran a continuación, en donde el tamaño máximo de matriz usado para las llenas es de 10.000, mientras que para las dispersas es de 1.000.000.
 
 
-## Código de Ensamblaje
+### Código de Ensamblaje
 
 A continuación, se presentan los dos códigos usados para armar las matrices laplacianas llenas y dispersas.
 
@@ -178,7 +180,7 @@ def laplaciana_dispersa(N, t=double):
     return 2*sparse.eye(N, dtype = double) - sparse.eye(N, N, 1, dtype = double) - sparse.eye(N, N, -1, dtype = double)
 ```
 
-## Gráficos
+### Gráficos
 Se presentan los gráficos obtenidos de tiempo de ensamblaje y de solución vs tamaño de matriz a continuación:
 
 ![MATMUL Matrices Llenas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%205/MATMUL%20Matrices%20Llenas.png)
@@ -190,3 +192,83 @@ Las líneas discontinuas que aparecen en los gráficos muestran comportamientos 
 En el caso del tiempo de ensamblaje de matrices llenas, este presentó un comportamiento sub-lineal y sobre la relación cuadrática con matrices pequeñas, pero asintótico a la linea cúbica con tamaños mayores. Mientras que el tiempo de solución del MATMUL mantenía un comportamiento asintótico a la relación cúbica con casi todo tamaño de matriz.
 
 En cuanto al tiempo de ensamblaje y el tiempo de solución MATMUL de las matrices dispersas, estos presentaron un comportamiento sobre lineal hasta N=10.000, luego del cual pasaron a ser asintóticos con respecto a la misma recta. 
+
+
+
+## 2. Complejidad algorítmica de SOLVE
+
+Se realizó un archivo py con el cual se ejecuta la operación SOLVE del sistema de ecuaciones Ax=b, donde la matriz A es laplaciana (se usaron matrices llenas y matrices dispersas del tipo CSR) y el vector b es un vector de unos, ambos con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, debido a que solo guarda los números de las matrices que son diferentes de cero, es decir, trabaja con menos datos (los más importantes) y se ahorra sumas de 0 que no tienen efecto. Esto se nota en los gráficos de tiempo vs N que se muestran a continuación, en donde el tamaño máximo de matriz usado para las llenas es de 10.000, mientras que para las dispersas es de 1.000.000.
+
+
+### Código de Ensamblaje
+
+A continuación, se presentan los dos códigos usados para armar las matrices laplacianas llenas y dispersas.
+
+**Función Laplaciana Matrices Llenas**
+```python
+def laplaciana(N, tipo=double):
+    e = eye(N)-eye(N,N,1)
+    return tipo(e+e.T)
+```
+
+**Función Laplaciana Matrices Dispersas**
+
+```python
+def laplaciana_dispersa(N, t=double):
+    return 2*sp.eye(N, dtype = double) - sp.eye(N, N, 1, dtype = double) - sp.eye(N, N, -1, dtype = double)
+```
+
+### Gráficos
+Se presentan los gráficos obtenidos de tiempo de ensamblaje y de solución vs tamaño de matriz a continuación:
+
+![SOLVE Matrices Llenas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%206/SOLVE%20Matrices%20Llenas.png)
+
+![SOLVE Matrices Dispersas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%206/SOLVE%20Matrices%20Dispersas.png)
+
+
+En el caso del Solve con matrices llenas, el tiempo de ensamblaje es asintótico a la relación cuadrática entre el tiempo transcurrido y el tamaño de la matriz, es decir, O(N^2), mientras que el tiempo de solución es asintótico a la relación cúbica O(N^3).
+
+En cuanto al Solve con matrices dispersas, tanto el tiempo de ensamblaje como el de solución son asintóticos a la relación lineal O(N).
+
+Con esto, se puede ver cómo afecta el tamaño de las matrices al comportamiento aparente, en donde, en todos los casos, al tener matrices más grandes, siempre se tiene un comportamiento asintótico con una de las relaciones O(N^n), mientras que con matrices pequeñas no siempre sucede, sino que las corridas se encuentran entre dos rectas O(N^n).
+
+Analizando la estabilidad de las corridas, es decir, cuánto varía una con la otra, las del tiempo de ensamblaje de matrices llenas, y los tiempos de solución de las llenas y dispersas coinciden todas menos una corrida, que se desvía alrededor de N=200. Mientras que las corridas del tiempo de solución de las matrices llenas son todas prácticamente iguales.
+
+## 3. Complejidad algorítmica de INV
+
+Se realizó un archivo py con el cual se ejecuta la operación INV en donde se invierte una matriz A laplaciana (se usaron matrices llenas y matrices dispersas del tipo CSC) con un tipo de dato double. Al correr el código, se observó que, el uso de matrices dispersas es más eficiente en cuanto al tiempo de ensamblaje y de solución de la operación, al igual que MATMUL y SOLVE. Sin embargo, para INV, el tamaño máximo de las matrices fue de 10.000 para matrices llenas y dispersas, dado que la reducción en el tiempo en el caso de las dispersas no fue notable, y se demoraba más de dos minutos por corrida con matrices de mayor tamaño, por lo que no se llegó a matrices de N=1.000.000 como MATMUL y SOLVE.
+
+
+### Código de Ensamblaje
+
+A continuación, se presentan los dos códigos usados para armar las matrices laplacianas llenas y dispersas.
+
+**Función Laplaciana Matrices Llenas**
+```python
+def laplaciana(N, tipo=double):
+    e = eye(N)-eye(N,N,1)
+    return tipo(e+e.T)
+```
+
+**Función Laplaciana Matrices Dispersas**
+
+```python
+def laplaciana_dispersa(N, t=double):
+    return 2*sp.eye(N, dtype = double) - sp.eye(N, N, 1, dtype = double) - sp.eye(N, N, -1, dtype = double)
+```
+
+### Gráficos
+Se presentan los gráficos obtenidos de tiempo de ensamblaje y de solución vs tamaño de matriz a continuación:
+
+![INV Matrices Llenas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%206/INV%20Matrices%20Llenas.png)
+
+![INV Matrices Dispersas](https://github.com/GeoChammas/MCOC2021-P0/blob/main/Entrega%206/INV%20Matrices%20Dispersas.png)
+
+
+En el caso del Inv con matrices llenas, el tiempo de ensamblaje es asintótico a la relación cuadrática entre el tiempo transcurrido y el tamaño de la matriz, es decir, O(N^2), pero solo hasta un N=200 aproximadamente, luego es asintótico a la relación cúbica O(N^3), mientras que el tiempo de solución solo es asintótico a la relación cúbica O(N^3).
+
+En cuanto al Inv con matrices dispersas, el tiempo de ensamblaje es asintótico a la relación constante, mientras que el tiempo de solución es asintótico a la relación cuadrática O(N^2) después de N=1000.
+
+Con esto, se puede ver cómo afecta el tamaño de las matrices al comportamiento aparente, en donde, en todos los casos, al tener matrices más grandes, siempre se tiene un comportamiento asintótico con una de las relaciones O(N^n), mientras que con matrices pequeñas no siempre sucede, sino que las corridas se encuentran entre dos rectas O(N^n).
+
+Analizando la estabilidad de las corridas, se notó que en los cuatro gráficos (tiempos de ensamblaje y solución de las matrices llenas y dispersas) existe variaciones entre una corrida y la otra, pero todas en un rango pequeño, en donde se sigue notando que tienen la misma tendencia.

@@ -13,39 +13,39 @@ def laplaciana_dispersa(N, t=double):
 
 
 
-# a = open("E6 INV Llena.txt", "w")
+a = open("E6 INV Llena.txt", "w")
 a1 = open("E6 INV Dispersa.txt", "w")
 
 Ns = logspace(1, 4, 30)
 Ns = [int(x) for x in Ns]
 
 
-# print("INV Matrices Llenas")
-# for i in range(10):
+print("INV Matrices Llenas")
+for i in range(10):
     
-#     dts_ensamblaje_l = []
-#     dts_solve_l = []
+    dts_ensamblaje_l = []
+    dts_solve_l = []
     
-#     print("Corrida Nº", i+1)
+    print("Corrida Nº", i+1)
     
-#     for N in Ns:
+    for N in Ns:
     
-#         t1 = perf_counter()
-#         A = laplaciana(N)
+        t1 = perf_counter()
+        A = laplaciana(N)
         
-#         t2 = perf_counter()
+        t2 = perf_counter()
         
-#         Am1 = inv(A, overwrite_a = True)
+        Am1 = inv(A, overwrite_a = True)
         
-#         t3 = perf_counter()
+        t3 = perf_counter()
         
-#         dts_ensamblaje_l.append(t2- t1)
-#         dts_solve_l.append(t3 - t2)
+        dts_ensamblaje_l.append(t2- t1)
+        dts_solve_l.append(t3 - t2)
 
-#     print(f"Tiempo Ensamblaje {dts_ensamblaje_l} s")
-#     print(f"Tiempo Solución {dts_solve_l} s")
-#     print("")
-#     a.write(f"{[Ns, dts_ensamblaje_l, dts_solve_l]}\n")
+    print(f"Tiempo Ensamblaje {dts_ensamblaje_l} s")
+    print(f"Tiempo Solución {dts_solve_l} s")
+    print("")
+    a.write(f"{[Ns, dts_ensamblaje_l, dts_solve_l]}\n")
 
 
 print("")
@@ -78,5 +78,5 @@ for i in range(10):
     print("")
     a1.write(f"{[Ns, dts_ensamblaje_d, dts_solve_d]}\n")
 
-# a.close()
+a.close()
 a1.close()
